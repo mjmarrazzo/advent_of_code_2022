@@ -22,7 +22,7 @@ fun main() {
     val sortedElfPresents = elfPresents.sortedDescending()
     println("top collector: ${sortedElfPresents.first()}")
 
-    val sum = sortedElfPresents.subList(0, 3).also {println(it)}.sum()
+    val sum = sortedElfPresents.subList(0, 3).sum()
     println("sum of top 3: $sum")
 }
 
