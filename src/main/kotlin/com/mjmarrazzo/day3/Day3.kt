@@ -14,13 +14,14 @@ private fun getSumOfPrioritiesPart1(lines: List<String>) {
 
 private fun getSumOfPrioritiesPart2(lines: List<String>) {
     val giftsInThreeRows = lines.chunked(3)
-        .map { (first, second, third) -> first.toSet().intersect(second.toSet()).intersect(third.toSet()).first() }
+        .map { it.map(CharSequence::toSet) }
+        .map { (first, second, third) -> first.intersect(second).intersect(third).first() }
         .sumOf { letters.indexOf(it) + 1 }
     println("part 2: $giftsInThreeRows")
 }
 
 fun main() {
-    val inputLines = File("src/main/resources/day3_input.txt").readLines()
+    val inputLines = File("src/main/resources/day3/input.txt").readLines()
     getSumOfPrioritiesPart1(inputLines)
     getSumOfPrioritiesPart2(inputLines)
 }

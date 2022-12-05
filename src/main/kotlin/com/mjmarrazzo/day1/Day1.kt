@@ -6,7 +6,7 @@ package com.mjmarrazzo.day1
 import java.io.File
 
 fun main() {
-    val inputLines = File("src/main/resources/day1_input.txt").readLines()
+    val inputLines = File("src/main/resources/day1/input.txt").readLines()
 
     val blankLinesIndexes = listOf(0) + inputLines
         .mapIndexed { index, s -> if(s == "") index else -1 }

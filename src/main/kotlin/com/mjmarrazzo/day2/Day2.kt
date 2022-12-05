@@ -28,8 +28,16 @@ private fun getMyScore(theirPick: String, myPick: String): Int {
     return if(whatBeatsTheirs != myChoice) 6 + myChoiceInPoints else myChoiceInPoints
 }
 
+//private fun getMyScore2(theirPick: String, myPick: String) {
+//    val theirChoice = translationMap[theirPick]!!
+//
+////    return when(myPick) {
+////
+////    }
+//}
+
 fun main() {
-    val inputLines = File("/Users/matthewmarrazzo/extraCurricular/adventOfCode/day1/lib/src/main/kotlin/day2/input.txt").readLines()
+    val inputLines = File("src/main/resources/day2/input.txt").readLines()
     val roundScores = inputLines
         .map { it.split(" ") }
         .map { (first, second) -> getMyScore(first, second) }
